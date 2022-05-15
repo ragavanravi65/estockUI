@@ -1,0 +1,20 @@
+.search {
+  display: inline-block; 
+  float:right;
+  }
+  
+  .inputBox{
+  padding: 10px 10px;
+  margin: 12px 5px;
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+.btnSize{
+  width: 90px;
+  margin: 12px 5px;;
+  border-radius: 10px;
+}
+
+.marginLogo{
+  margin-left: 10px!important;
+}
