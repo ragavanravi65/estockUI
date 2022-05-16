@@ -5,10 +5,11 @@ import { COLUMNS } from "./column";
 import  classes from "../css/TableAlignment.module.css";
 import React, {useMemo} from "react";
 import { Button } from "react-bootstrap";
+import AggregateStocks from "../components/AggregateStocks";
 
 function Table(props) {
     const stock=props.stockValues.stock!=undefined? props.stockValues.stock:[];
-    const aggr=props.stockValues.stockAggr;
+
 
     const columns=useMemo(()=>COLUMNS,[])
     const datas=useMemo(()=>props.stockValues.stock!=undefined? props.stockValues.stock:[],[props])
@@ -52,28 +53,7 @@ function Table(props) {
           <Button onClick={()=>previousPage()}variant="outline-dark">previous</Button>{' '}
           <Button  onClick={()=>nextPage()} variant="outline-dark">next</Button>
       </div>
-      {aggr !== undefined ? (
-        <div>
-            <table>
-                <thead>
-                    <tr>
-                        <th>StockPrice(Minimum)</th>
-                        <th>StockPrice(Maximum)</th>
-                        <th>StockPrice(Average)</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>{aggr.minStockValue}</td>
-                        <td>{aggr.maxStockValue}</td>
-                        <td>{aggr.avgStockValue}</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-      ) : (
-        <div className={classes.altStatement}>Select date interval for values...</div>
-      )}
+          <AggregateStocks stockAggr={props.stockValues.stockAggr}/>
     </div>
   );
 }

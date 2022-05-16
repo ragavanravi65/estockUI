@@ -1,6 +1,7 @@
 import DropDownCompany from "./Dropdown";
 import {useEffect, useState} from 'react'; 
 import axios from "axios";
+import { Button } from "react-bootstrap";
 
 
 
@@ -23,18 +24,14 @@ useEffect(()=>{
 
     if(isFetching){
         return (<div>
-      loading...
+         <Button variant="dark" className="my-3">loading company dropdown...</Button>
         </div>
         )
     }
     else{
-        const companyCodes=[];
-        for(var i=0;i<loadedCompanies.length;i++){
-            companyCodes[i]=loadedCompanies[i].company;
-        }
     return (
         <div>
-            <DropDownCompany companyData={companyCodes}/>
+            <DropDownCompany companyData={loadedCompanies}/>
 
             </div>
     );
