@@ -8,7 +8,8 @@ import { Button } from "react-bootstrap";
 import AggregateStocks from "../components/AggregateStocks";
 
 function Table(props) {
-    const stock=props.stockValues.stock!=undefined? props.stockValues.stock:[];
+    const stock=props.stockValues.stock!=undefined &&
+    props.stockValues.stock!=null ? props.stockValues.stock:[];
 
 
     const columns=useMemo(()=>COLUMNS,[])

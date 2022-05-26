@@ -48,13 +48,13 @@ function DatePickerDesign(){
       <Col  className={classes.sameLine}>
       <h6><i>Start Date</i></h6> <DatePicker selected={startDate} 
       onChange={(date) => setStartDate(date)}
-      dateFormat='yyyy-MM-dd'/>  
+      dateFormat='yyyy-MM-dd'  maxDate={new Date()}/>  
       </Col>
       <Col className={classes.sameLine}>
       <h6><i>End Date</i></h6>  <DatePicker selected={endDate} 
       onChange={(date) => setendDate(date)}
       dateFormat='yyyy-MM-dd'
-      minDate={startDate} /> 
+      minDate={startDate}  maxDate={new Date()}/> 
       </Col>
       <Col className={classes.sameLine}>
       <Button type="submit" variant="dark" size="sm">Submit</Button>

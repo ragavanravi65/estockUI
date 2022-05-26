@@ -7,8 +7,12 @@ function DropDownCompany(props) {
   const [value, setValue] = useState("Default");
 
   const handleChange = (event) => {
+    if(event.target.value.localeCompare("Default")!=0){
     setValue(event.target.value);
     updateContextData(event.target.value);
+    }
+    else
+    setValue(event.target.value);
   };
 
   const contextUpdater= useContext(CompanyContext);

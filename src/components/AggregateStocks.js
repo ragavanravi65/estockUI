@@ -2,7 +2,7 @@ import  classes from "../css/TableAlignment.module.css";
 
 function AggregateStocks(props)
 {
-    const aggr=props.stockAggr;
+    const aggr=props.stockAggr!=null?props.stockAggr:{};
 
     return (      
         <div>
