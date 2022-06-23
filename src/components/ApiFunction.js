@@ -13,7 +13,7 @@ const [loadedCompanies,setLoadedCompanies]=useState([]);
 //2 params function & array of dependencies
 useEffect(()=>{
     setIsFetching(true);
-    axios.get('http://localhost:8080/api/v1.0/market/company/getall')
+    axios.get('http://estockcompany-demo-1.southindia.azurecontainer.io:8080/api/v1.0/market/company/getall')
 .then(response=>{
         console.log(response.data);
             setIsFetching(false);  

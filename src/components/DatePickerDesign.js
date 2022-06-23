@@ -34,7 +34,7 @@ function DatePickerDesign(){
     function getDetails(e){
       e.preventDefault();
       const companyCode=companyloader.company.companyCode
-      axios.get('http://localhost:8081/api/v1.0/market/stock/get/'+companyCode+'/'+getDate(startDate)+'/'+getDate(endDate))
+      axios.get('http://estockservice-demo.southindia.azurecontainer.io:8081/api/v1.0/market/stock/get/'+companyCode+'/'+getDate(startDate)+'/'+getDate(endDate))
       .then(response=>{
         setfetchedStock(response.data);
         console.log(response.data)

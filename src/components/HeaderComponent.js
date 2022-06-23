@@ -20,7 +20,7 @@ function HeaderComponent() {
     e.preventDefault();
     axios
       .get(
-        "http://localhost:8080/api/v1.0/market/company/info/" +
+        "http://estockcompany-demo-1.southindia.azurecontainer.io:8080/api/v1.0/market/company/info/" +
           companySearch.companyCode
       )
       .then((response) => {
